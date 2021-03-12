@@ -5,7 +5,7 @@ module Plans
     class PlanRepository
 
       def initialize
-        @redis_conn = Redis.new(:host => 'localhost', :port => '6379')
+        @redis_conn = Redis.new(url: ENV['REDIS_URL'])
       end
 
       def find_by_external_id(external_id)
